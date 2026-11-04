@@ -2,7 +2,7 @@
 
 # ⌨️ RMS Switcher
 
-**The macOS menu-bar toolbox that replaces six small utilities with one fast, native app.**
+**A Swiss-army knife for macOS: one menu-bar icon instead of a pile of small utilities.**
 
 Fixes text typed in the wrong keyboard layout as you type, and puts a command bar, a clipboard manager,
 screenshots with OCR, a multilingual input field and a file tray one keystroke away.
@@ -23,6 +23,20 @@ screenshots with OCR, a multilingual input field and a file tray one keystroke a
 > This repository hosts **downloads, release notes and the license** for RMS Switcher.
 > The source code is not published.
 
+## Why I built it
+
+For years I used excellent apps: Maccy, Shottr, Raycast, Thaw, MOS, Punto Switcher, caffeinate and
+others. Some had all the features I needed, some had too few, and some were clearly overkill. Each
+one was fairly large, took memory, and added yet another icon to the menu bar. With the notch on a
+MacBook that became a real problem.
+
+So I built a "Swiss-army knife" for macOS that solves all of this in one place: **a single icon and
+solid functionality** that makes many familiar tools more convenient. I tried not to break habits
+you already have and only to extend them, for example by adding editing to screenshots and to text
+in the clipboard history.
+
+I hope you will like it and find it as handy as I do.
+
 ## Why RMS Switcher
 
 If you type in more than one language, you know the moment: a whole sentence in `ghbdtn` instead of
@@ -30,7 +44,7 @@ If you type in more than one language, you know the moment: a whole sentence in 
 tool and a few other helpers running just to get through the day. RMS Switcher is one small app that
 does all of it, and does it quietly.
 
-- **One icon instead of six.** Layout switching, launcher, clipboard history, screenshots with an
+- **One icon instead of a dozen.** Layout switching, launcher, clipboard history, screenshots with an
   editor and OCR, a floating input field and a file tray share one menu-bar item, one settings
   window and one set of hotkeys.
 - **Native and light.** Written in Swift for Apple Silicon, with no third-party packages and no
@@ -45,6 +59,27 @@ does all of it, and does it quietly.
   no credit card.
 
 ## Features
+
+### Everything at a glance
+
+| Area | What it does |
+| --- | --- |
+| **Layout switcher** | Fixes text typed on the wrong layout, automatically or with Double Shift |
+| **Screenshots** | Area, screen, window, delayed and scrolling capture; editor; OCR |
+| **Clipboard manager** | Searchable history, pinned items, snippets, plain-text paste, text and image editing |
+| **Snippets** | Short triggers that expand into your text, with variables |
+| **File Tray** | A drop shelf for files at the top edge of the screen |
+| **Mouse wheel inversion** | Reverse a classic mouse wheel without touching the trackpad |
+| **Multilingual input** | Floating field with transliteration for 16 languages |
+| **Translate and polish** | Selected text, via AI providers or a local model |
+| **AI assistant** | Ask AI from the command bar (cloud, local model or Siri) |
+| **Launcher** | Apps, files and recents from one command bar |
+| **Calculator and currency converter** | Expressions, units and live exchange rates |
+| **Process manager** | See CPU usage and quit stuck apps |
+| **Caffeinate** | Keep-awake toggle in the tray |
+| **Tray organizer** | Hides menu-bar clutter behind a divider (made for notch Macs) |
+| **Autocorrect control** | System autocorrect and prediction on or off, per app |
+| **Quiet mode** | No sounds, pills or notifications when you need silence |
 
 ### Smart layout switcher
 - **Automatic fix at the end of a word** for English, Russian and Ukrainian: it recognizes text
