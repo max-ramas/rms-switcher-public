@@ -131,10 +131,21 @@ Ollama / LM Studio model. Nothing is sent until you add your own key or point th
 model.
 
 ### File Tray
-A staging area for files, in the style of a drop shelf. Drag a file to the top edge of the screen
-(under the notch by default; left or right if you prefer) or rest the pointer there, and the tray
-slides out. It keeps **references, not copies**, follows files that are renamed or moved, survives
-restarts and lets you drag files out again.
+A temporary shelf for files: collect them in one place, then sort them into folders and apps.
+
+- **Open it** by dragging a file to the top edge of the screen (under the notch by default; left or
+  right if you prefer), by resting the pointer there (when the tray holds files), with `⌃⌥F`, or from
+  the tray menu. A tray opened by a drag closes by itself when the pointer leaves it.
+- **Files and folders** are kept as **references, not copies**: the original stays where it is, the
+  tray follows renames and moves, remembers the list between restarts, and shows files that were
+  deleted as dimmed entries.
+- **Select several:** click selects, `⌘`-click adds or removes one, `⇧`-click selects a range, and
+  dragging over empty space draws a selection rectangle. A drag carries **every selected file**.
+- **Dragging out works like Finder:** the file is **moved** on the same disk and **copied** to another
+  disk; hold `⌥` to always **copy**, `⌘⌥` to make an **alias**. A moved file leaves the tray; copies
+  and aliases stay so you can place them in the next folder too.
+- Right-click for **Open, Show in Finder, Copy paths, Select all, Remove from tray**; double-click
+  opens the item. The tray never takes keyboard focus, so selection is by mouse.
 
 ### Snippets and text expansion
 Type a short trigger in any app and it is replaced on the fly: `@@` becomes your e-mail address,
