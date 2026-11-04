@@ -165,11 +165,22 @@ new version does not start.
 ## Licensing
 
 Every Mac gets a **free 14-day trial** with full functionality, automatically and without a credit
-card. After that a license key is required; enter it in **Tray → Activate license…** (or in
-*About → License…*). The license terms are in [LICENSE](LICENSE).
+card. After the trial, a license is required.
 
-Paid plans are being finalized. Pricing and the purchase link will appear here and in the app; until
-then licensing questions go to [support@rms-ds.com](mailto:support@rms-ds.com).
+| Plan | Price | Per month |
+| --- | --- | --- |
+| 1 month | €5 | €5.00 |
+| 3 months | €12 | €4.00 |
+| 6 months | €20 | €3.33 |
+| **12 months** | **€30** | **€2.50** |
+
+**How to buy:** sign in (or register) at the
+[RMS license shop](https://license.rms-ds.com/dashboard/shop), choose **RMS Switcher** and pay. Your
+license key appears in your dashboard. In the app open **Tray → Activate license…** (or
+*About → License…*) and paste it. The same buttons are in the app: **Buy a license…** opens the shop.
+
+The license terms are in [LICENSE](LICENSE). Licensing questions:
+[support@rms-ds.com](mailto:support@rms-ds.com).
 
 ## FAQ
 
@@ -182,8 +193,9 @@ a connection.
 **Will it change text in my password manager or terminal?** Secure fields are skipped, and you can
 add any app to the blacklist in Settings. Automatic switching happens only when you finish a word.
 
-**What happens when the trial ends?** A license is required to keep using RMS Switcher and to receive
-updates. Your data and settings are never deleted.
+**What happens when the trial ends?** The features are switched off until you buy a license or enter
+a key; the tray menu, settings, updates and the purchase buttons stay available. Your data and
+settings are never deleted, and nothing is recorded in the meantime.
 
 **Why is the app not notarized?** Notarization requires an Apple Developer ID, which is planned. Until
 then the first launch needs the right-click → Open step above.
