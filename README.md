@@ -182,8 +182,8 @@ a connection.
 **Will it change text in my password manager or terminal?** Secure fields are skipped, and you can
 add any app to the blacklist in Settings. Automatic switching happens only when you finish a word.
 
-**What happens when the trial ends?** The app keeps running but asks for a license key; your data and
-settings stay as they are.
+**What happens when the trial ends?** A license is required to keep using RMS Switcher and to receive
+updates. Your data and settings are never deleted.
 
 **Why is the app not notarized?** Notarization requires an Apple Developer ID, which is planned. Until
 then the first launch needs the right-click → Open step above.
