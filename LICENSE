@@ -1,0 +1,57 @@
+RMS Switcher — Commercial License
+
+Copyright (c) 2026 RMS Digital Services. All rights reserved.
+
+This is a proprietary product. The software is licensed, not sold. The source code is not
+published and is not licensed under this agreement.
+
+1. Definitions. "RMS" means RMS Digital Services. "Software" means RMS Switcher for macOS in
+   binary form, including updates delivered by RMS. "License Key" means the key or trial grant
+   issued by the RMS license server for your Mac.
+
+2. Trial. RMS provides a free evaluation period (currently 14 days from first launch) with
+   full functionality. The trial is issued per Mac by the RMS license server and ends
+   automatically; it cannot be restarted on the same Mac.
+
+3. License. Subject to payment of the applicable fee and to this agreement, RMS grants you a
+   non-exclusive, non-transferable, non-sublicensable license to install and use the Software on
+   the number of Macs covered by your License Key, for the term of your plan, for your own
+   personal or internal business use.
+
+4. Restrictions. You may not: (a) copy, distribute, publish, rent, lease, sell, sublicense or
+   otherwise make the Software available to third parties, except that you may keep backup copies
+   for your own licensed Macs; (b) reverse engineer, decompile or disassemble the Software, or
+   attempt to extract its source code, except to the extent applicable law expressly permits
+   despite this restriction; (c) modify the Software or create derivative works; (d) remove or
+   alter copyright or other notices; (e) circumvent, disable or tamper with the trial, the license
+   check, the update verification or any other protection mechanism; (f) use the Software to
+   provide a competing product or service.
+
+5. Online services. To work as licensed, the Software contacts the RMS license server
+   (license.rms-ds.com) to issue and verify trial and license grants, and the RMS update server
+   (update.rms-ds.com) to look for and download updates. Optional features that you configure
+   yourself (for example translation or AI providers) send the text you choose to the provider
+   you selected, using your own account or API key.
+
+6. Updates. Updates are provided while your license or trial is valid. RMS may change, suspend or
+   discontinue features and may stop offering updates for a version after notice on rms-ds.com.
+
+7. Ownership. RMS and its licensors own all right, title and interest in the Software,
+   including all intellectual property rights. No rights are granted except those expressly
+   stated in this agreement.
+
+8. Termination. This license ends automatically when your plan expires or if you breach this
+   agreement. On termination you must stop using the Software and delete your copies. Sections
+   4, 7, 9 and 10 survive termination.
+
+9. Disclaimer of warranty. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE AND NON-INFRINGEMENT. RMS DOES NOT WARRANT THAT THE SOFTWARE WILL BE ERROR-FREE OR
+   THAT AUTOMATIC LAYOUT CONVERSION WILL ALWAYS BE CORRECT.
+
+10. Limitation of liability. TO THE MAXIMUM EXTENT PERMITTED BY LAW, RMS WILL NOT BE LIABLE FOR
+    ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES, OR FOR LOSS OF DATA OR PROFITS,
+    ARISING FROM THE USE OF THE SOFTWARE. RMS'S TOTAL LIABILITY IS LIMITED TO THE FEES YOU PAID
+    FOR THE SOFTWARE IN THE 12 MONTHS BEFORE THE CLAIM.
+
+Questions about licensing: support@rms-ds.com · https://rms-ds.com
