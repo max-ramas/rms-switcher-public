@@ -174,8 +174,11 @@ keyboard layout.
 
 ## Install
 
-1. Download `RMSSwitcher.zip` from the [latest release](https://github.com/max-ramas/rms-switcher-public/releases/latest).
-2. Unzip it and move **RMSSwitcher.app** to `/Applications`.
+1. Download **[RMSSwitcher.dmg](https://github.com/max-ramas/rms-switcher-public/releases/latest/download/RMSSwitcher.dmg)**
+   from the [latest release](https://github.com/max-ramas/rms-switcher-public/releases/latest)
+   (the same app is also available as `RMSSwitcher.zip`).
+2. Open the DMG and drag **RMSSwitcher** onto the **Applications** folder (or unzip the zip and move
+   the app there yourself).
 3. Open it. The first launch starts your 14-day trial and shows the permissions guide.
 
 > **Gatekeeper:** builds are signed but not yet notarized by Apple, so macOS may refuse to open the
