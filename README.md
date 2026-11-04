@@ -101,10 +101,38 @@ A staging area for files, in the style of a drop shelf. Drag a file to the top e
 slides out. It keeps **references, not copies**, follows files that are renamed or moved, survives
 restarts and lets you drag files out again.
 
-### Everything else in the tray
-Mouse **wheel direction** reversal for a classic mouse (the trackpad is left alone), a **tray
-organizer** that hides menu-bar clutter, a **quiet mode**, a keep-awake toggle, launch at login,
-and an autocorrect manager. The interface is available in Russian and English.
+### Snippets and text expansion
+Type a short trigger in any app and it is replaced on the fly: `@@` becomes your e-mail address,
+`;;phone` your phone number, `;;date` today's date. Snippets can contain variables (`{DATE}`,
+`{TIME}`, `{YEAR}`), live next to the clipboard history, and can be created, edited and deleted
+there. Expansion never touches password fields and can be switched off in Settings.
+
+### Mouse wheel direction
+Reverse the **vertical and/or horizontal scrolling of a classic mouse wheel** (Settings → Mouse
+wheel) without installing a separate utility. The trackpad and Magic Mouse keep the system
+direction.
+
+### Control over macOS autocorrect
+Switch the system's gray inline prediction and autocorrect on or off **globally or per app**
+(for example off in Terminal and your editor, on in Messages), with *system default / force on /
+force off* modes.
+
+### Your own rules and dictionaries
+- A list of words the layout switcher must **never** convert.
+- Installable **dictionary packs** (updated from rms-ds.com) that improve recognition for more
+  languages.
+- Per-language control: choose which of your enabled macOS layouts take part in automatic
+  switching.
+
+### Menu bar, power and quiet
+A **tray organizer** that hides menu-bar clutter behind a divider, a **quiet mode** (no sounds, no
+caret pill, no notifications, screenshots go straight to the clipboard), a **keep-awake** toggle,
+launch at login, and a language setting (system / Russian / English).
+
+### Your data
+- Retention and size limits for the clipboard history, a custom folder for screenshots,
+  JSON **export** of history and snippets, and **import** from other clipboard managers.
+- A live counter in the tray: characters typed, corrections made, and AI usage with its cost in USD.
 
 ## Default hotkeys
 
