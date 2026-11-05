@@ -220,6 +220,9 @@ keyboard layout.
   license) and the **update server** (looks for new versions). Updates are verified with a
   cryptographic signature before they are installed, and the installer refuses a package signed by a
   different certificate.
+- Once a day (and after an update) the app tells the license server that an install exists: an
+  anonymous device hash, the app version and the update channel. Nothing about your text, files or
+  clipboard is sent, and the license key itself never leaves your Mac.
 - AI features contact the provider you choose, with your own key, and only when you use them.
 
 ## Requirements
