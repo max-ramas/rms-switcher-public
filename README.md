@@ -14,7 +14,7 @@ screenshots with OCR, a multilingual input field and a file tray one keystroke a
 [![Trial](https://img.shields.io/badge/free%20trial-14%20days-brightgreen)](#licensing)
 [![License](https://img.shields.io/badge/license-commercial-lightgrey)](LICENSE)
 
-[Why](#why-rms-switcher) • [Download](https://github.com/max-ramas/rms-switcher-public/releases/latest) • [Features](#features) • [Hotkeys](#default-hotkeys) • [Privacy](#privacy-and-security) • [Install](#install) • [Licensing](#licensing) • [FAQ](#faq)
+[Why](#why-rms-switcher) • [Download](#download) • [Features](#features) • [Hotkeys](#default-hotkeys) • [Privacy](#privacy-and-security) • [Install](#install) • [Licensing](#licensing) • [FAQ](#faq)
 
 </div>
 
@@ -22,6 +22,18 @@ screenshots with OCR, a multilingual input field and a file tray one keystroke a
 
 > This repository hosts **downloads, release notes and the license** for RMS Switcher.
 > The source code is not published.
+
+## Download
+
+<div align="center">
+
+[![Download for macOS](https://img.shields.io/badge/%E2%AC%87%EF%B8%8F%20Download%20for%20macOS-RMSSwitcher.dmg-2ea44f?style=for-the-badge&logo=apple&logoColor=white)](https://update.rms-ds.com/get/rms-switcher?src=readme)
+
+Apple Silicon · macOS 14+ · 14-day free trial · also as [.zip](https://update.rms-ds.com/get/rms-switcher/zip?src=readme) · [all releases](https://github.com/max-ramas/rms-switcher-public/releases)
+
+</div>
+
+---
 
 ## Why I built it
 
@@ -220,9 +232,8 @@ keyboard layout.
 
 ## Install
 
-1. Download **[RMSSwitcher.dmg](https://github.com/max-ramas/rms-switcher-public/releases/latest/download/RMSSwitcher.dmg)**
-   from the [latest release](https://github.com/max-ramas/rms-switcher-public/releases/latest)
-   (the same app is also available as `RMSSwitcher.zip`).
+1. Download **[RMSSwitcher.dmg](https://update.rms-ds.com/get/rms-switcher?src=readme)**
+   (the same app is also available as [`RMSSwitcher.zip`](https://update.rms-ds.com/get/rms-switcher/zip?src=readme)).
 2. Open the DMG and drag **RMSSwitcher** onto the **Applications** folder (or unzip the zip and move
    the app there yourself).
 3. Open it. The first launch starts your 14-day trial and shows the permissions guide.
