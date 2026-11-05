@@ -21,11 +21,13 @@ screenshots with OCR, a multilingual input field and a file tray one keystroke a
 ---
 
 > ### 🔒 Privacy promise
-> RMS Switcher does **not** collect your data or usage statistics. The only things we know are that
-> an installation exists (an anonymous device ID and the app version) and whether it has a license.
-> Your text, files, clipboard, screenshots and keystrokes never leave your Mac, and there is no
-> analytics of any kind. This is how all RMS products work. If an online service is ever introduced,
-> you will be told about it clearly beforehand.
+> RMS does **not** collect your data or usage statistics. The only things we receive are the fact of
+> an installation (an anonymous device ID and the app version) and whether it has a license. There
+> is no analytics of any kind. Your text, files, clipboard, screenshots and keystrokes stay on your
+> Mac; the only exception is a feature you turn on yourself, such as asking an AI or translation
+> provider with your own key, which sends just what you ask it. Want full privacy? Point the AI
+> features at a local **Ollama** and nothing leaves your Mac at all. This is how all RMS products work.
+> If we ever introduce an online service, we will tell you clearly beforehand.
 
 > This repository hosts **downloads, release notes and the license** for RMS Switcher.
 > The source code is not published.
