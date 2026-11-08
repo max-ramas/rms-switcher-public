@@ -248,9 +248,7 @@ keyboard layout.
    the app there yourself).
 3. Open it. The first launch starts your 14-day trial and shows the permissions guide.
 
-> **Gatekeeper:** builds are signed but not yet notarized by Apple, so macOS may refuse to open the
-> app the first time. Right-click **RMSSwitcher.app → Open** (once), or run
-> `xattr -dr com.apple.quarantine /Applications/RMSSwitcher.app`.
+The app is signed with an Apple Developer ID and notarized, so macOS opens it without a warning.
 
 **Updates:** the app looks for new versions by itself and shows a notice in the tray menu and in
 *About*; you decide when to install. **Check for updates…** in the tray menu checks right away. The
@@ -294,9 +292,6 @@ add any app to the blacklist in Settings. Automatic switching happens only when 
 **What happens when the trial ends?** The features are switched off until you buy a license or enter
 a key; the tray menu, settings, updates and the purchase buttons stay available. Your data and
 settings are never deleted, and nothing is recorded in the meantime.
-
-**Why is the app not notarized?** Notarization requires an Apple Developer ID, which is planned. Until
-then the first launch needs the right-click → Open step above.
 
 ## Support
 
