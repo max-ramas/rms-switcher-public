@@ -5,7 +5,8 @@
 **A Swiss-army knife for macOS: one menu-bar icon instead of a pile of small utilities.**
 
 Fixes text typed in the wrong keyboard layout as you type, and puts a command bar, a clipboard manager,
-screenshots with OCR, a multilingual input field and a file tray one keystroke away.
+screenshots with OCR, a multilingual input field, a file tray and an optional local password manager
+one keystroke away.
 
 [![Release](https://img.shields.io/github/v/release/max-ramas/rms-switcher-public?color=blue)](https://github.com/max-ramas/rms-switcher-public/releases/latest)
 ![Downloads](https://img.shields.io/github/downloads/max-ramas/rms-switcher-public/total)
@@ -87,6 +88,7 @@ does all of it, and does it quietly.
 | **Screenshots** | Area, screen, window, delayed and scrolling capture; editor; OCR |
 | **Clipboard manager** | Searchable history, pinned items, snippets, plain-text paste, text and image editing |
 | **Snippets** | Short triggers that expand into your text, with variables |
+| **Password manager** | Optional. Logins stay in your Mac's Keychain; a browser extension saves and fills them |
 | **File Tray** | A drop shelf for files at the top edge of the screen |
 | **Mouse wheel inversion** | Reverse a classic mouse wheel without touching the trackpad |
 | **Multilingual input** | Floating field with transliteration for 16 languages |
@@ -113,6 +115,7 @@ does all of it, and does it quietly.
   `web.`), and apps you add to a blacklist (remote desktop and virtual-machine apps are excluded
   by default).
 - **Caret indicator** — a small `[RU]` / `[EN]` pill shows the layout you just switched to.
+- **Caps Lock as a layout key** (optional, off by default): a tap switches the layout, holding the key still toggles Caps.
 - Choose which of your enabled macOS layouts take part in automatic switching.
 
 ### Command bar — `⌥ Space`
@@ -172,6 +175,35 @@ Type a short trigger in any app and it is replaced on the fly: `@@` becomes your
 `{TIME}`, `{YEAR}`), live next to the clipboard history, and can be created, edited and deleted
 there. Expansion never touches password fields and can be switched off in Settings.
 
+### Password manager — optional
+
+A small, local password manager for the browser. It is **off by default**; turn it on in
+**Settings → Passwords**.
+
+- **Local only.** Logins are stored in your login **Keychain** on this Mac: no account, no sync, no
+  cloud, no network. Nothing is collected or sent anywhere.
+- **Save and fill in the browser.** The extension offers to save a login after you submit a sign-in
+  form, and fills it in from the toolbar popup or with `Ctrl+Shift+P`.
+- **For apps without an extension**, an optional on-screen picker (default `⌃⌥P`, enable it in the
+  same settings) types the login into the focused field, or copies the password for 10 seconds.
+- **Import** from a CSV or Bitwarden JSON export (Apple Passwords, Bitwarden, 1Password, Chrome).
+  **Export** of the whole vault as CSV always asks for Touch ID or your Mac password. **Delete all**
+  clears the vault.
+- **Browsers:** Chrome, Vivaldi, Brave and Firefox talk to the app through the browser's native
+  messaging; Safari uses a loopback-only connection to the app on the same Mac.
+
+**Setting up the extension.** The extensions ship inside the app. Open **Settings → Passwords**,
+press **Connect browsers…**, then **Show extension folder** (it opens the `chrome`, `firefox` and
+`safari` folders):
+
+- **Chrome, Vivaldi, Brave:** `chrome://extensions` → Developer mode → **Load unpacked** → the
+  `chrome` folder.
+- **Safari:** unzip the archive in the `safari` folder, move the app to Applications, open it and
+  turn the extension on in Safari's settings. The Safari app is signed with a Developer ID
+  certificate and notarized by Apple.
+- **Firefox:** `about:debugging` → **Load Temporary Add-on** → `manifest.json` in the `firefox`
+  folder.
+
 ### Mouse wheel direction
 Reverse the **vertical and/or horizontal scrolling of a classic mouse wheel** (Settings → Mouse
 wheel) without installing a separate utility. The trackpad and Magic Mouse keep the system
@@ -216,13 +248,17 @@ keyboard layout.
 | Undo layout fix | `⌃⌥Z` |
 | Screenshot: area / screen / window / delay / scrolling | `⌘⇧2` / `⌘⇧1` / `⌘⇧0` / `⌘⇧9` / `⌘⇧8` |
 | File Tray | `⌃⌥F` |
+| Fill a login in the browser (extension) | `Ctrl+Shift+P` |
+| Password picker window (optional) | `⌃⌥P` |
 
 ## Privacy and security
 
 - Settings, clipboard history and the file-tray list are stored in
   `~/Library/Application Support/RMSSwitcher/`. Clipboard **text** is encrypted; the key and your
   API keys are stored in the macOS Keychain.
-- Password and secure input fields are never read or changed.
+- Password and secure input fields are never read or changed by the layout fixer or snippets.
+- If you turn on the password manager, your logins are kept in the login Keychain of this Mac only.
+  They are never synced or sent anywhere, and exporting them requires Touch ID or your Mac password.
 - The app talks to two RMS services only: the **license server** (issues the trial, checks the
   license) and the **update server** (looks for new versions). Updates are verified with a
   cryptographic signature before they are installed, and the installer refuses a package signed by a
@@ -285,6 +321,12 @@ offline for the period shown in the license; everything except AI features and u
 a connection.
 
 **Does it work with Intel Macs?** No — Apple Silicon only.
+
+**Does the password manager sync or upload my passwords?** No. Logins live in the local Keychain of
+this Mac only; the extension talks to the app on the same computer. There is no account and no cloud.
+
+**Do I have to use the password manager?** No, it is off by default and independent of the other
+features.
 
 **Will it change text in my password manager or terminal?** Secure fields are skipped, and you can
 add any app to the blacklist in Settings. Automatic switching happens only when you finish a word.
