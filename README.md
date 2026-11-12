@@ -201,8 +201,10 @@ press **Connect browsers…**, then **Show extension folder** (it opens the `chr
 - **Safari:** unzip the archive in the `safari` folder, move the app to Applications, open it and
   turn the extension on in Safari's settings. The Safari app is signed with a Developer ID
   certificate and notarized by Apple.
-- **Firefox:** `about:debugging` → **Load Temporary Add-on** → `manifest.json` in the `firefox`
-  folder.
+- **Firefox:** install **RMS Switcher Passwords** from
+  [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/rms-switcher-passwords/), then
+  press **Connect browsers…** in the app. (Developers can still load the `firefox` folder through
+  `about:debugging` → **Load Temporary Add-on**.)
 
 ### Mouse wheel direction
 Reverse the **vertical and/or horizontal scrolling of a classic mouse wheel** (Settings → Mouse
