@@ -4,9 +4,10 @@
 
 **A Swiss-army knife for macOS: one menu-bar icon instead of a pile of small utilities.**
 
-Fixes text typed in the wrong keyboard layout as you type, and puts a command bar, a clipboard manager,
+Fixes text typed in the wrong keyboard layout as you type (short words, prepositions and punctuation
+included), keeps ⌘C and ⌘V working on any layout, and puts a command bar, a clipboard manager,
 screenshots with OCR, a multilingual input field, a file tray and an optional local password manager
-one keystroke away.
+one keystroke away. The interface speaks 17 languages.
 
 [![Release](https://img.shields.io/github/v/release/max-ramas/rms-switcher-public?color=blue)](https://github.com/max-ramas/rms-switcher-public/releases/latest)
 ![Downloads](https://img.shields.io/github/downloads/max-ramas/rms-switcher-public/total)
@@ -84,13 +85,17 @@ does all of it, and does it quietly.
 
 | Area | What it does |
 | --- | --- |
-| **Layout switcher** | Fixes text typed on the wrong layout, automatically or with Double Shift |
+| **Layout switcher** | Fixes text typed on the wrong layout, automatically or with Double Shift; short words, abbreviations and punctuation included |
+| **Exceptions dictionary** | Words that must never be converted, per layout; learns by itself from your undos |
+| **Layout keys** | Instant Fn / 🌐 tap that follows macOS logic, optional Caps Lock switching |
+| **Shortcuts on any layout** | ⌘C, ⌘V, ⌘Z keep working on Russian, Georgian, Hebrew and other layouts, also in Adobe apps |
 | **Screenshots** | Area, screen, window, delayed and scrolling capture; editor; OCR |
 | **Clipboard manager** | Searchable history, pinned items, snippets, plain-text paste, text and image editing |
 | **Snippets** | Short triggers that expand into your text, with variables |
 | **Password manager** | Optional. Logins stay in your Mac's Keychain; a browser extension saves and fills them |
 | **File Tray** | A drop shelf for files at the top edge of the screen |
 | **Mouse wheel inversion** | Reverse a classic mouse wheel without touching the trackpad |
+| **17 interface languages** | English, Russian, Spanish, French, Italian, German and ten more |
 | **Multilingual input** | Floating field with transliteration for 16 languages |
 | **Translate and polish** | Selected text, via AI providers or a local model |
 | **AI assistant** | Ask AI from the command bar (cloud, local model or Siri) |
@@ -104,19 +109,65 @@ does all of it, and does it quietly.
 
 ### Smart layout switcher
 - **Automatic fix at the end of a word** for English, Russian and Ukrainian: it recognizes text
-  typed on the wrong layout from letter patterns (phonotactics and n-grams), erases it and types
-  the right word, then switches the system layout so the next word starts correctly.
+  typed on the wrong layout from letter patterns (phonotactics and n-grams) confirmed by the macOS
+  dictionaries, erases it and types the right word, then switches the system layout so the next
+  word starts correctly. It runs only when you finish a word, never in the middle of one.
+- **Short words and prepositions.** The words people mistype most are handled too:
+  one-letter words (`в`, `с`, `к`, `о`, `у`, `и`, `а`, `я`) are converted together with the word
+  after them (`f ghbrbym` → `а прикинь`), also with a capital at the start of a paragraph and in
+  Chromium and Electron apps. Two-letter words are ambiguous, so they switch only in context, right
+  after a word of the target language; a chain of short words before a mistyped word is converted
+  together, also across commas.
+- **Punctuation on the wrong layout.** The full-stop key and the comma key of the Russian layout are
+  understood while you write Russian on the English layout: `ghbdtn/` → `привет.`, `yf?` → `на,`.
+- **Abbreviations.** About a hundred frequent Russian abbreviations typed on the English layout
+  convert as a whole (`UJCN` → `ГОСТ`, `JJJ` → `ООО`, `AYC` → `ФНС`).
+- **Right script wins.** A word already written in the target script is never "converted" into
+  itself, even when macOS reports a stale layout.
 - **Manual fix with Double Shift** — converts the selection or the word at the caret in any app,
-  including Chromium and Electron apps. Undo with `⌃⌥Z` or by pressing Double Shift on an empty
-  field.
+  including Chromium and Electron apps, and always acts as the emergency exit from the automatic
+  rules. Undo with `⌃⌥Z` or by pressing Double Shift on an empty field.
+- **Learns from your undos.** Undo an automatic fix and the word is remembered as an exception (see
+  [Exceptions dictionary](#exceptions-dictionary)).
 - **More languages by key map and dictionaries:** Georgian, Armenian, Turkish, Hebrew and Arabic.
 - **Knows when to stay out:** password and secure fields, ALL-CAPS, camelCase, names, a built-in
   list of 300+ developer terms, e-mail addresses, short English words with punctuation (`cab.`,
   `web.`), and apps you add to a blacklist (remote desktop and virtual-machine apps are excluded
   by default).
+- **Steps aside under load.** When the Mac is busy (the processor above 90% for two seconds, or the
+  system answering late), automatic correction pauses instead of editing text late and corrupting
+  it, tells you so, and resumes by itself when the load drops. Double Shift keeps working.
 - **Caret indicator** — a small `[RU]` / `[EN]` pill shows the layout you just switched to.
-- **Caps Lock as a layout key** (optional, off by default): a tap switches the layout, holding the key still toggles Caps.
 - Choose which of your enabled macOS layouts take part in automatic switching.
+
+### Layout keys: Fn / 🌐 and Caps Lock
+- **Instant Fn / 🌐 switch** (optional): a short tap switches the layout without the delay macOS adds.
+  It follows the macOS logic rather than cycling through every layout: one tap returns to the
+  previous language, so the two languages you use alternate, and quick repeated taps go further down
+  the list of recent ones. Fn with another key and long holds work as usual. Switcher turns the
+  system action of the 🌐 key off while this is on and restores it when you turn it off or quit.
+- **Caps Lock as a layout key** (optional, off by default): a tap switches the layout, holding the
+  key still toggles Caps.
+
+### Shortcuts on any layout
+Many apps (Adobe's among them) match a shortcut by the character, not by the physical key, so on a
+Russian, Georgian or Hebrew layout `⌘C` turns into `⌘С` and does nothing. With **Settings → Shortcuts
+work on any layout** (off by default), while `⌘` or `⌃` is held the key's character is switched to the
+Latin one, so `⌘C`, `⌘V`, `⌘Z` and the rest work whatever layout is active. Ordinary typing is not
+touched. For anyone who works in non-English layouts this removes a daily annoyance.
+
+### Exceptions dictionary
+The **Dictionary** tab keeps the words the switcher must never convert.
+
+- **Per layout.** A word belongs to the layout it was typed on (the Russian lookalike of `qwen`
+  on the Russian layout is a different entry from `qwen` on English), or to **all languages**.
+- **Edit it freely:** add one or many words at once, rename a word or move it to another layout,
+  delete, search. Words you typed yourself and words the app learned are marked differently.
+- **Fills itself.** Undo the same automatic fix again and the word joins the dictionary. You choose
+  after how many undos (1 to 10, two by default) or switch learning off. Words still collecting undos
+  are listed with their counter; redoing a fix takes the undo back.
+- **Costs nothing while typing.** A lookup is one in-memory probe and counting happens only when you
+  undo, so even a dictionary of thousands of words does not slow typing.
 
 ### Command bar — `⌥ Space`
 A fast launcher in the Spotlight/Raycast style, without a heavy index of its own:
@@ -138,7 +189,8 @@ A fast launcher in the Spotlight/Raycast style, without a heavy index of its own
 - Area (`⌘⇧2`), full screen (`⌘⇧1`), window (`⌘⇧0`), delayed (`⌘⇧9`) and **scrolling** (`⌘⇧8`)
   capture, with a floating thumbnail you can copy, save, pin to the screen or open in the editor.
 - **Editor:** arrows, shapes, text, rulers and **irreversible redaction** (pixelation plus blur,
-  not a see-through black box); every element stays selectable and editable.
+  not a see-through black box); every element stays selectable and editable. `Enter` applies a crop
+  frame, `⌘Z` / `⌘⇧Z` undo and redo every step, crops included.
 - **OCR** of any screenshot, with QR-code and barcode detection.
 
 ### Floating multilingual input — `⌘⇧Space`
@@ -216,17 +268,19 @@ Switch the system's gray inline prediction and autocorrect on or off **globally 
 (for example off in Terminal and your editor, on in Messages), with *system default / force on /
 force off* modes.
 
-### Your own rules and dictionaries
-- A list of words the layout switcher must **never** convert.
-- Installable **dictionary packs** (updated from rms-ds.com) that improve recognition for more
-  languages.
-- Per-language control: choose which of your enabled macOS layouts take part in automatic
-  switching.
+### Languages and dictionaries
+- Besides the macOS system dictionaries (English, Russian, Ukrainian, Turkish, Hebrew, Arabic), the
+  app downloads **dictionary packs** by itself from rms-ds.com: Russian (15,000 words), Ukrainian
+  (12,000), Georgian (10,000), Turkish (10,000), Hebrew (8,000), Arabic (8,000) and Armenian (1,236).
+  A pack word never switches text on its own; it only confirms what the letter patterns already suggest.
+- The **context analyzer** looks at the neighbouring words: an English word in the middle of a Russian
+  phrase does not drag the rest of the sentence along.
+- Your own [exceptions dictionary](#exceptions-dictionary) sits on top of all of this.
 
 ### Menu bar, power and quiet
 A **tray organizer** that hides menu-bar clutter behind a divider, a **quiet mode** (no sounds, no
 caret pill, no notifications, screenshots go straight to the clipboard), a **keep-awake** toggle,
-launch at login, and a language setting (system / Russian / English).
+launch at login, and a choice of **17 interface languages**: English, Russian, Spanish, French, Italian, German, Ukrainian, Georgian, Armenian, Serbian (Cyrillic and Latin), Turkish, Hebrew, Arabic, Lithuanian, Latvian, Estonian and Romanian. The system permission prompts follow the same language.
 
 ### Your data
 - Retention and size limits for the clipboard history, a custom folder for screenshots,
@@ -236,7 +290,8 @@ launch at login, and a language setting (system / Russian / English).
 ## Default hotkeys
 
 All of them can be changed in **Settings** and are tied to physical keys, so they keep working on any
-keyboard layout.
+keyboard layout. For other apps' shortcuts on a non-Latin layout, see
+[Shortcuts on any layout](#shortcuts-on-any-layout).
 
 | Action | Hotkey |
 | --- | --- |
@@ -248,6 +303,7 @@ keyboard layout.
 | Ask AI / Process killer / Calculator | `⌘⇧A` / `⌘⇧P` / `⌃⌥=` |
 | Fix word on the wrong layout | Double `Shift` |
 | Undo layout fix | `⌃⌥Z` |
+| Switch layout instantly (optional) | tap `Fn` / `🌐` |
 | Screenshot: area / screen / window / delay / scrolling | `⌘⇧2` / `⌘⇧1` / `⌘⇧0` / `⌘⇧9` / `⌘⇧8` |
 | File Tray | `⌃⌥F` |
 | Fill a login in the browser (extension) | `Ctrl+Shift+P` |
@@ -269,6 +325,8 @@ keyboard layout.
   anonymous device hash, the app version and the update channel. Nothing about your text, files or
   clipboard is sent, and the license key itself never leaves your Mac.
 - AI features contact the provider you choose, with your own key, and only when you use them.
+- The diagnostic log in macOS Console (subsystem `com.rms.switcher`) holds numbers and app names only,
+  never the text you type.
 
 ## Requirements
 
@@ -321,6 +379,17 @@ The license terms are in [LICENSE](LICENSE). Licensing questions:
 **Does it work offline?** Yes. The license is verified online from time to time and stays valid
 offline for the period shown in the license; everything except AI features and updates works without
 a connection.
+
+**A word was switched when it should not have been. What do I do?** Undo it with `⌃⌥Z` (or Double
+Shift on an empty field): the word is remembered, and after the number of undos you set (two by
+default) it is never converted again. You can also add or edit words by hand in the **Dictionary** tab.
+
+**Does it slow down typing?** No. Letters pass through at once; only the key that ends a word waits
+a moment for the decision, and when the Mac is overloaded the automatic part steps aside instead of
+making you wait.
+
+**⌘C and ⌘V do nothing in Photoshop or Illustrator on a Russian layout.** Turn on **Shortcuts work on
+any layout** in Settings.
 
 **Does it work with Intel Macs?** No — Apple Silicon only.
 
