@@ -140,6 +140,11 @@ does all of it, and does it quietly.
 - **Caret indicator** — a small `[RU]` / `[EN]` pill shows the layout you just switched to.
 - Choose which of your enabled macOS layouts take part in automatic switching.
 
+### Change case of the selected text
+For anyone who works with text: **camelCase, snake_case, kebab-case, UPPERCASE, lowercase and Title Case** for the
+selection in any app, from the tray menu (**Services → Case**) or from your own hotkeys. No shortcut is set by
+default; record one per case in **Settings → Hotkeys** (it needs `⌘`, `⌃` or `⌥`) and clear it with the cross.
+
 ### Layout keys: Fn / 🌐 and Caps Lock
 - **Instant Fn / 🌐 switch** (optional): a short tap switches the layout without the delay macOS adds.
   It follows the macOS logic rather than cycling through every layout: one tap returns to the
@@ -304,6 +309,7 @@ keyboard layout. For other apps' shortcuts on a non-Latin layout, see
 | Fix word on the wrong layout | Double `Shift` |
 | Undo layout fix | `⌃⌥Z` |
 | Switch layout instantly (optional) | tap `Fn` / `🌐` |
+| Change case of the selection: camelCase, snake_case, kebab-case, UPPERCASE, lowercase, Title Case (optional) | not set by default; record your own in **Settings → Hotkeys** |
 | Screenshot: area / screen / window / delay / scrolling | `⌘⇧2` / `⌘⇧1` / `⌘⇧0` / `⌘⇧9` / `⌘⇧8` |
 | File Tray | `⌃⌥F` |
 | Fill a login in the browser (extension) | `Ctrl+Shift+P` |
